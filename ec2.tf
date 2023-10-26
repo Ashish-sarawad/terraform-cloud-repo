@@ -16,5 +16,6 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
   tags {
     name = "Created BY TFC"
+    }
 }
 
