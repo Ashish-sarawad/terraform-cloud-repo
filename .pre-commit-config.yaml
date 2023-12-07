@@ -1,5 +1,6 @@
 repos:
 - repo: https://github.com/Ashish-sarawad/terraform-cloud-repo.git
+  rev:  v1.0
   hooks:
     - id: terraform_fmt
     - id: terraform_validate
