@@ -16,7 +16,7 @@ provider "aws" {
 #tfsec:ignore:aws-ec2-enforce-http-token-imds
 resource "aws_instance" "web" {
   ami           = "ami-0dbc3d7bc646e8516"
-  instance_type = "t2.micro1"
+  instance_type = "t3.micro"
   root_block_device {
     encrypted = true
   }
