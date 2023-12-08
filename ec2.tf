@@ -12,15 +12,14 @@ provider "aws" {
 }
 
 
-#tfsec:ignore:aws-ec2-enforce-http-token-imds tfsec:ignore:
+#tfsec:ignore:aws-ec2-enforce-http-token-imds
 resource "aws_instance" "web" {
   ami           = "ami-0dbc3d7bc646e8516"
   instance_type = "t2.micro"
   root_block_device {
     encrypted = true
   }
- 
-  tags = {
+   tags = {
     name = "Created by pre-commit"
   }
 }
