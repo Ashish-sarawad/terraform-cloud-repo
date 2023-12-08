@@ -1,4 +1,5 @@
 terraform {
+  required_version = "1.3.7"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -15,11 +16,11 @@ provider "aws" {
 #tfsec:ignore:aws-ec2-enforce-http-token-imds
 resource "aws_instance" "web" {
   ami           = "ami-0dbc3d7bc646e8516"
-  instance_type = "t2.micro"
+  instance_type = "t2.micro1"
   root_block_device {
     encrypted = true
   }
-   tags = {
+  tags = {
     name = "Created by pre-commit"
   }
 }
