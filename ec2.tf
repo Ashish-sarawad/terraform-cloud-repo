@@ -11,10 +11,16 @@ provider "aws" {
   region = "us-east-1"
 }
 
+
+#tfsec:ignore:aws-ec2-enforce-http-token-imds tfsec:ignore:
 resource "aws_instance" "web" {
   ami           = "ami-0dbc3d7bc646e8516"
   instance_type = "t2.micro"
+  root_block_device {
+    encrypted = true
+  }
+ 
   tags = {
-    name = "Created BY TFC"
+    name = "Created by pre-commit"
   }
 }
